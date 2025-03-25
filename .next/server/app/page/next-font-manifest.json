@@ -1,0 +1,16 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/src/app/page": [
+      "static/media/gyByhwUxId8gMEwcGFWNOITd-s.p.da1ebef7.woff2",
+      "static/media/FunnelSans_Medium-s.p.4f80530f.ttf",
+      "static/media/FunnelSans_Bold-s.p.9c951e0f.ttf",
+      "static/media/FunnelSans_Italic-s.p.edf4c540.ttf",
+      "static/media/FunnelSans_Regular-s.p.24bf9a32.ttf",
+      "static/media/or3nQ6H_1_WfwkMZI_qYFrcdmhHkjko-s.p.be19f591.woff2",
+      "static/media/FunnelSans_SemiBold-s.p.85b01502.ttf"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

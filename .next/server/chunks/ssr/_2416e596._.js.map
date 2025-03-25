@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/Eduardo/projetosdev/v2_blitz/v2_blitz/src/app/page.tsx"],"sourcesContent":["import { redirect } from 'next/navigation';\n\nexport default function Home() {\n  redirect('/');\n}\n"],"names":[],"mappings":";;;AAAA;AAAA;;AAEe,SAAS;IACtB,CAAA,GAAA,qLAAA,CAAA,WAAQ,AAAD,EAAE;AACX","debugId":null}}]
+}
