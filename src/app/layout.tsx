@@ -1,76 +1,53 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import localFont from 'next/font/local'
+"use client";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { useEffect, useState } from "react";
+import { ArrowUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const funnelSans = localFont({
-  src: [
-    {
-      path: '../../public/fonts/Funnel_Sans/static/FunnelSans-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Funnel_Sans/static/FunnelSans-Medium.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Funnel_Sans/static/FunnelSans-SemiBold.ttf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Funnel_Sans/static/FunnelSans-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Funnel_Sans/static/FunnelSans-Italic.ttf',
-      weight: '400',
-      style: 'italic',
-    },
-  ],
-  variable: '--font-funnel-sans',
-})
-
-export const metadata: Metadata = {
-  title: "Blitz Lavanderia - Serviços de Lavanderia Profissional",
-  description: "Serviços de lavanderia profissional com qualidade e rapidez. Atendemos roupas, uniformes, edredons e muito mais.",
-  keywords: "lavanderia, serviços de lavanderia, lavagem de roupas, lavagem a seco, passar roupas",
-  icons: {
-    icon: [
-      {
-        url: '/logo_blitz_square.png',
-        href: '/logo_blitz_square.png',
-      }
-    ],
-    apple: '/logo_blitz_square.png',
-  }
-};
-
-export default function RootLayout({
+export default function SiteLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const checkScrollTop = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollTop);
+    return () => window.removeEventListener('scroll', checkScrollTop);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <html lang="pt-BR" className="scroll-smooth">
-      <body
-        className={`${funnelSans.variable} ${geistSans.variable} ${geistMono.variable} antialiased font-funnel-sans`}
-      >
-        {children}
-      </body>
-    </html>
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-1">{children}</main>
+      <Footer />
+      
+      {showScrollTop && (
+        <Button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary hover:bg-primary-dark p-0 shadow-lg z-50"
+          aria-label="Voltar ao topo"
+        >
+          <ArrowUp size={24} />
+        </Button>
+      )}
+    </div>
   );
-}
+} 
