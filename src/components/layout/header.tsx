@@ -110,7 +110,7 @@ export function Header() {
             </nav>
             <div className="flex flex-col gap-4 pt-6 w-full">
               <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white font-medium py-6 h-auto transition-all duration-300">
-                <Link href="/contato" onClick={() => setMobileMenuOpen(false)}>Agendar Serviço</Link>
+                <Link href="/contato" onClick={() => setMobileMenuOpen(false)}>Agendarr Serviço</Link>
               </Button>
               <Button asChild className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-6 h-auto transition-all duration-300">
                 <Link href="/contato" onClick={() => setMobileMenuOpen(false)}>Contato</Link>
