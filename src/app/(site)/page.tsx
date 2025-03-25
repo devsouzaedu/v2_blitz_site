@@ -224,7 +224,7 @@ export default function Home() {
                   <Card className="border border-stone-100 shadow-lg bg-stone-50/50 backdrop-blur-sm h-full py-6 rounded-2xl transform transition-all duration-300 hover:shadow-xl">
                     <CardContent className="pt-8">
                       <blockquote className="text-center space-y-6">
-                        <p className="text-lg md:text-xl italic text-gray-700">"{depoimento.texto}"</p>
+                        <p className="text-lg md:text-xl italic text-gray-700">&quot;{depoimento.texto}&quot;</p>
                         <footer className="mt-6">
                           <p className="font-semibold text-primary text-lg">{depoimento.nome}</p>
                           <p className="text-sm text-muted-foreground">{depoimento.profissao}</p>

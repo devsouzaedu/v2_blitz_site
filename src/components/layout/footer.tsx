@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shirt, MapPin, Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
 import Image from "next/image";
 
 export function Footer() {
