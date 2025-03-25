@@ -92,7 +92,7 @@ export function Header() {
         <div className="fixed inset-0 bg-white z-40 flex flex-col h-full min-h-screen w-full">
           <div className="container py-10 space-y-8 flex flex-col items-center pt-20 flex-grow">
             <nav className="flex flex-col gap-6 w-full">
-              {navItems.map((item, _) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
