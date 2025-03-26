@@ -75,7 +75,7 @@ export default function Home() {
         <div className="container grid gap-12 md:gap-16 md:grid-cols-2 items-center">
           <div className="space-y-8 text-center md:text-left animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-              Sua roupa limpa e cuidada com <span className="text-accent">rapidez</span> e <span className="text-accent">qualidade</span>
+              Sua roupa limpa e cuid4da com <span className="text-accent">rapidez</span> e <span className="text-accent">qualidade</span>
             </h1>
             <p className="text-xl text-white/90 max-w-md mx-auto md:mx-0 md:pr-8">
               Deixe a Blitz Lavanderia cuidar das suas roupas enquanto você aproveita o seu tempo.
