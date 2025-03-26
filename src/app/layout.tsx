@@ -1,10 +1,18 @@
 "use client";
 
+import "./globals.css";
+import { Inter as FontSans } from "next/font/google";
+import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-funnel-sans",
+});
 
 export default function SiteLayout({
   children,
@@ -34,7 +42,10 @@ export default function SiteLayout({
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className={cn(
+      "flex min-h-screen flex-col",
+      fontSans.variable
+    )}>
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
