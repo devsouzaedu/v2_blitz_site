@@ -100,9 +100,8 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative h-[350px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl animate-slide-right mx-auto w-full max-w-[550px] border-4 border-white/20">
-            {/* Overlay azul para a imagem lateral - mais escuro */}
-            <div className="absolute inset-0 bg-[#005d93]/70 z-10"></div>
+          <div className="relative h-[350px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl animate-slide-right mx-auto w-full max-w-[550px] border-4 border-white/20 z-[20]">
+            {/* Removendo overlay da imagem para que ela apareça com clareza */}
             <Image
               src="/blitz_lavanderia_imagens_avulsas (9).jpg"
               alt="Blitz Lavanderia"
