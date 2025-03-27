@@ -62,22 +62,25 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative py-28 md:py-40 px-4 sm:px-6 overflow-hidden">
-        {/* Imagem de fundo com opacidade reduzida */}
+        {/* Imagem de fundo com opacidade muito reduzida */}
         <div className="absolute inset-0 z-[1]">
           <Image 
             src="/blitz_lavanderia_imagens_avulsas (9).jpg" 
             alt="Fundo Blitz Lavanderia" 
             fill 
-            className="object-cover opacity-20"
+            className="object-cover opacity-15"
             priority
           />
         </div>
         
-        {/* Overlay azul forte */}
-        <div className="absolute inset-0 bg-primary/80 z-[2]"></div>
+        {/* Base azul escura sólida */}
+        <div className="absolute inset-0 bg-[#005d93] z-[2]"></div>
+        
+        {/* Overlay azul forte adicional */}
+        <div className="absolute inset-0 bg-primary/90 z-[3]"></div>
         
         {/* Gradiente adicional para mais profundidade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary to-secondary/90 opacity-70 z-[3]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#004a75] to-[#006daf] opacity-80 z-[4]"></div>
         
         {/* Conteúdo */}
         <div className="container grid gap-12 md:gap-16 md:grid-cols-2 items-center relative z-[10]">
@@ -98,8 +101,8 @@ export default function Home() {
             </div>
           </div>
           <div className="relative h-[350px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl animate-slide-right mx-auto w-full max-w-[550px] border-4 border-white/20">
-            {/* Overlay azul para a imagem lateral */}
-            <div className="absolute inset-0 bg-primary/50 z-10"></div>
+            {/* Overlay azul para a imagem lateral - mais escuro */}
+            <div className="absolute inset-0 bg-[#005d93]/70 z-10"></div>
             <Image
               src="/blitz_lavanderia_imagens_avulsas (9).jpg"
               alt="Blitz Lavanderia"
