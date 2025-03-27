@@ -53,7 +53,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-base font-medium transition-all duration-300 hover:text-primary font-funnel-sans relative group",
+                "text-base font-medium transition-all duration-300 hover:text-primary font-sans relative group",
                 pathname === item.href
                   ? "text-primary font-semibold"
                   : "text-muted-foreground"
@@ -97,7 +97,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "text-lg font-medium transition-all duration-300 hover:text-primary font-funnel-sans py-3 border-b border-stone-100 text-center",
+                    "text-lg font-medium transition-all duration-300 hover:text-primary font-sans py-3 border-b border-stone-100 text-center",
                     pathname === item.href
                       ? "text-primary font-semibold"
                       : "text-muted-foreground"

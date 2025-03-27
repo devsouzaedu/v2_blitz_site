@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 const fontSans = FontSans({
   subsets: ["latin"],
-  variable: "--font-funnel-sans",
+  variable: "--font-sans",
 });
 
 export default function SiteLayout({

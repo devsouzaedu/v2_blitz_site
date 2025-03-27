@@ -37,7 +37,7 @@ module.exports = {
         destructive: "var(--destructive)",
       },
       fontFamily: {
-        'funnel-sans': ['var(--font-funnel-sans)', 'sans-serif'],
+        sans: ['var(--font-sans)', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

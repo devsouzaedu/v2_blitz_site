@@ -13,7 +13,7 @@ export default function Loading() {
           className="object-contain"
         />
       </div>
-      <h1 className="text-2xl font-funnel-sans font-bold text-primary mb-4">Blitz Lavanderia</h1>
+      <h1 className="text-2xl font-sans font-bold text-primary mb-4">Blitz Lavanderia</h1>
       <div className="w-64 h-2 bg-gray-200 rounded-full overflow-hidden">
         <div className="h-full bg-primary animate-[loading_1.5s_ease-in-out_infinite]"></div>
       </div>
