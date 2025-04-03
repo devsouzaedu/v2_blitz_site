@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Shirt, Badge, Clock, CheckCircle } from "lucide-react";
+import { Shirt, Badge, Clock, CheckCircle, MapPin } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -17,6 +17,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Script from "next/script";
 
 const servicosDestaque = [
   {
@@ -111,6 +112,67 @@ export default function Home() {
             />
           </div>
         </div>
+      </section>
+
+      {/* Seção de Mapa */}
+      <section className="py-16 bg-stone-50 px-4 sm:px-6">
+        <div className="container space-y-10">
+          <div className="text-center space-y-6 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">Nossa Localização</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+              Venha nos visitar ou agende uma coleta em domicílio
+            </p>
+          </div>
+          
+          <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-lg border-4 border-white mx-auto animate-fade-in">
+            <div id="map" className="w-full h-full"></div>
+            
+            <div className="absolute bottom-4 left-4 bg-white p-4 rounded-lg shadow-md z-10 max-w-xs animate-slide-up flex items-center gap-3">
+              <MapPin className="h-6 w-6 text-primary flex-shrink-0" />
+              <div>
+                <h3 className="font-medium text-primary">Blitz Lavanderia</h3>
+                <p className="text-sm text-muted-foreground">Rua Maria Fernanda, 429, Jardim Graziela, Barueri, São Paulo</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center animate-fade-in">
+            <Button asChild className="bg-primary text-white hover:bg-primary/90 gap-2 transition-all duration-300 transform hover:scale-105">
+              <a href="https://maps.google.com/?q=-23.482819562730338,-46.888643411638654" target="_blank" rel="noopener noreferrer">
+                Ver no Google Maps
+                <span aria-hidden="true">↗</span>
+              </a>
+            </Button>
+          </div>
+        </div>
+        
+        <Script
+          strategy="lazyOnload"
+          src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDHGC3Yt9PEGr1DVinzwQN15fzVKXF6_4k&callback=initMap`}
+        />
+        
+        <Script id="google-maps-script" strategy="lazyOnload">
+          {`
+            window.initMap = function() {
+              const location = { lat: -23.482819562730338, lng: -46.888643411638654 }; // Blitz Lavanderia em Barueri
+              const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 16,
+                center: location,
+                mapId: "DEMO_MAP_ID",
+                disableDefaultUI: true,
+                zoomControl: true,
+                scrollwheel: false,
+              });
+              
+              const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: "Blitz Lavanderia",
+                animation: google.maps.Animation.DROP,
+              });
+            };
+          `}
+        </Script>
       </section>
 
       {/* Serviços em Destaque */}
